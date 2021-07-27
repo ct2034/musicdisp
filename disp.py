@@ -17,15 +17,14 @@ FONT_WINDOW = 18
 FONT_FULLSCREEN = 30
 
 
-def midi_callback(msg, a):
-    print(a)
+def midi_callback(msg, gui_elements):
     # info from message
     print(f"msg: {msg}")
     oct_nr = oct(msg[0][1])[2:]
     oct_nr_padded = oct_nr.zfill(2)
 
     # updating gui
-    global info_label, img_label, images, root, center_frame
+    (info_label, img_label, images, root, center_frame) = gui_elements
     part_name, part_img = images[oct_nr_padded]
     info_label.config(text=part_name)
     center_frame.place(relx=0.5, rely=0.5, anchor=CENTER)
@@ -68,11 +67,6 @@ def fullscreen(root, info_label):
 if __name__ == "__main__":
     print("main")
     info_label = None
-
-    # midi setup
-    midin = rtmidi.MidiIn()
-    midin.open_virtual_port("musicdisp")
-    midin.set_callback(midi_callback, "a")
 
     # gui setup
     root = Tk()
@@ -136,6 +130,12 @@ if __name__ == "__main__":
             imagetk = ImageTk.PhotoImage(img)
             images[section] = (part_name, imagetk)
     print(images)
+
+    # midi setup
+    midin = rtmidi.MidiIn()
+    midin.open_virtual_port("musicdisp")
+    midin.set_callback(midi_callback, (
+        info_label, img_label, images, root, center_frame))
 
     # placeholder info
     info_label.config(text="Done processing\nwaiting for midi ...")
