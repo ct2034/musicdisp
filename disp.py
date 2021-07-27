@@ -18,9 +18,12 @@ FONT_FULLSCREEN = 30
 
 
 def midi_callback(msg, _):
+    # info from message
     print(f"msg: {msg}")
     oct_nr = oct(msg[0][1])[2:]
     oct_nr_padded = oct_nr.zfill(2)
+
+    # updating gui
     global info_label, img_label, images, root, center_frame
     part_name, part_img = images[oct_nr_padded]
     info_label.config(text=part_name)
@@ -34,6 +37,8 @@ def midi_callback(msg, _):
     except Exception as e:
         print(f"Exception: {e}")
     sleep(1)
+
+    # removing info overlay
     center_frame.place_forget()
 
 
@@ -72,15 +77,14 @@ if __name__ == "__main__":
     root = Tk()
     root.title("musicdisp")
 
-    # setting fullscreen
-
+    # screen controls
     root.bind("<Escape>", lambda a: windowed(root, info_label))
     root.bind("<F11>", lambda a: fullscreen(root, info_label))
     windowed(root, info_label)  # not fullscreen
     screen_width, screen_height = 1920, 1080  # 1080p
     # screen_width, screen_height = 1366, 768  # laptop
 
-    # prepare gui
+    # prepare gui elements
     img_frame = Frame(root, relief="flat", borderwidth=0, bg="#FFFFFF")
     img_frame.pack(fill=BOTH, expand=YES)
     img_frame.pack_propagate(False)
@@ -95,10 +99,11 @@ if __name__ == "__main__":
     info_label.pack()
     root.update()
 
-    # load input
+    # load config
     with open("parts.json", "r") as f:
         parts_json = json.load(f)
 
+    # load images
     assert parts_json is not None
     print(parts_json)
     images = {}
@@ -112,6 +117,7 @@ if __name__ == "__main__":
             info_label.config(text=(
                 info_song+"\n"+info_sec))
             root.update()
+            print("    opening image")
             img = Image.open(parts_json[song][section][IDX_FNAME])
             percent = parts_json[song][section][IDX_PERCENT]
             part_name = parts_json[song][section][IDX_SECTION]
@@ -120,13 +126,15 @@ if __name__ == "__main__":
             ratio = float(screen_width) / float(img_width)
             delta = int(img_height * ratio) - screen_height
             shift = int(delta * float(percent) / float(100))
+            print("    resizing image")
             img = img.resize(
                 (int(img_width * ratio), int(img_height * ratio)))
+            print("    cropping image")
             img = img.crop((0, shift, screen_width, screen_height+shift))
             imagetk = ImageTk.PhotoImage(img)
             images[section] = (part_name, imagetk)
     print(images)
 
+    # placeholder info
     info_label.config(text="Done processing\nwaiting for midi ...")
-
     root.mainloop()
