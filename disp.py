@@ -4,7 +4,8 @@ import json
 import logging
 import tkinter
 from time import sleep
-from tkinter import BOTH, CENTER, DISABLED, YES, Button, Frame, Label, Tk
+from tkinter import (BOTH, CENTER, DISABLED, NW, SW, YES, Button, Frame, Label,
+                     Tk)
 
 import rtmidi
 from PIL import Image, ImageTk
@@ -22,37 +23,47 @@ def midi_callback(msg, gui_elements):
     print(f"msg: {msg}")
     oct_nr = oct(msg[0][1])[2:]
     oct_nr_padded = oct_nr.zfill(2)
+    next_oct_nr = oct(msg[0][1]+1)[2:]
+    next_oct_nr_padded = next_oct_nr.zfill(2)
 
     # updating gui
-    (info_label, img_label, images, root, center_frame) = gui_elements
+    (
+        info_label, info_label_bottom, img_label, images, root,
+        center_frame_top, center_frame_bottom) = gui_elements
     part_name, part_img = images[oct_nr_padded]
     info_label.config(text=part_name)
-    center_frame.place(relx=0.5, rely=0.5, anchor=CENTER)
+    if next_oct_nr_padded in images.keys():
+        next_part_name, _ = images[next_oct_nr_padded]
+        center_frame_bottom.place(
+            relx=0, rely=1, anchor=SW)
+        info_label_bottom.config(text=next_part_name)
+        info_label_bottom.pack()
+    else:
+        center_frame_bottom.place_forget()
+    center_frame_top.place(relx=0, rely=0, anchor=NW)
+    info_label.config(text=part_name)
     info_label.pack()
-    root.update()
     assert oct_nr_padded in images
     try:
         img_label.config(image=part_img)
-        root.update()
     except Exception as e:
         print(f"Exception: {e}")
-    sleep(1)
-
-    # removing info overlay
-    center_frame.place_forget()
+    root.update()
 
 
-def windowed(root, info_label):
+def windowed(root, info_label, info_label_bottom):
     root.attributes("-zoomed", False)
     root.attributes('-topmost', False)
     root.update()
     root.geometry("300x300")  # Whatever size
     if info_label is not None:
         info_label.config(font=("Helvetica", FONT_WINDOW))
+    if info_label_bottom is not None:
+        info_label_bottom.config(font=("Helvetica", FONT_WINDOW))
     root.update()
 
 
-def fullscreen(root, info_label):
+def fullscreen(root, info_label, info_label_bottom):
     root.attributes("-zoomed", True)  # fullscreen
     root.attributes('-topmost', True)  # topmost window
     root.update()
@@ -61,21 +72,26 @@ def fullscreen(root, info_label):
     root.overrideredirect(1)  # Remove border
     if info_label is not None:
         info_label.config(font=("Helvetica", FONT_FULLSCREEN))
+    if info_label_bottom is not None:
+        info_label_bottom.config(font=("Helvetica", FONT_FULLSCREEN))
     root.update()
 
 
 if __name__ == "__main__":
     print("main")
     info_label = None
+    info_label_bottom = None
 
     # gui setup
     root = Tk()
     root.title("musicdisp")
 
     # screen controls
-    root.bind("<Escape>", lambda a: windowed(root, info_label))
-    root.bind("<F11>", lambda a: fullscreen(root, info_label))
-    windowed(root, info_label)  # not fullscreen
+    root.bind("<Escape>", lambda a: windowed(
+        root, info_label, info_label_bottom))
+    root.bind("<F11>", lambda a: fullscreen(
+        root, info_label, info_label_bottom))
+    windowed(root, info_label, info_label_bottom)  # not fullscreen
     screen_width, screen_height = 1920, 1080  # 1080p
     # screen_width, screen_height = 1366, 768  # laptop
 
@@ -88,11 +104,16 @@ if __name__ == "__main__":
     img_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     # for info
-    center_frame = Frame(img_frame, relief='flat', borderwidth=0)
-    center_frame.place(relx=0.5, rely=0.5, anchor=CENTER)
-    info_label = Label(center_frame, text='loading', borderwidth=2,
-                       fg="#FFFFFF", relief="flat", bg="#111111")
+    center_frame_top = Frame(img_frame, relief='flat', borderwidth=0)
+    center_frame_top.place(relx=0.5, rely=0.5, anchor=CENTER)
+    info_label = Label(center_frame_top, text='loading', borderwidth=2,
+                       fg="#FF2222", relief="flat", bg="#333333")
     info_label.pack()
+    center_frame_bottom = Frame(img_frame, relief='flat', borderwidth=0)
+    # center_frame_bottom.place(relx=0.5, rely=0.5, anchor=CENTER)
+    info_label_bottom = Label(center_frame_bottom, text='loading', borderwidth=2,
+                              fg="#22FF22", relief="flat", bg="#333333")
+    info_label_bottom.pack()
     root.update()
 
     # load config
@@ -141,7 +162,8 @@ if __name__ == "__main__":
     midin = rtmidi.MidiIn()
     midin.open_virtual_port("musicdisp")
     midin.set_callback(midi_callback, (
-        info_label, img_label, images, root, center_frame))
+        info_label, info_label_bottom, img_label, images, root,
+        center_frame_top, center_frame_bottom))
 
     # placeholder info
     info_label.config(text="Done processing\nwaiting for midi ...")
