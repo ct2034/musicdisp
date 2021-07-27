@@ -102,6 +102,7 @@ if __name__ == "__main__":
     # load images
     assert parts_json is not None
     print(parts_json)
+    uncropped_images = {}
     images = {}
     root.update()
     for song in parts_json:
@@ -113,19 +114,24 @@ if __name__ == "__main__":
             info_label.config(text=(
                 info_song+"\n"+info_sec))
             root.update()
-            print("    opening image")
-            img = Image.open(parts_json[song][section][IDX_FNAME])
             percent = parts_json[song][section][IDX_PERCENT]
             part_name = parts_json[song][section][IDX_SECTION]
-            img_width = img.size[0]
-            img_height = img.size[1]
-            ratio = float(screen_width) / float(img_width)
-            delta = int(img_height * ratio) - screen_height
-            shift = int(delta * float(percent) / float(100))
-            print("    resizing image")
-            img = img.resize(
-                (int(img_width * ratio), int(img_height * ratio)))
+            img_fname = parts_json[song][section][IDX_FNAME]
+            if img_fname in uncropped_images.keys():
+                img = uncropped_images[img_fname]
+            else:
+                print("    opening image")
+                img = Image.open(img_fname)
+                img_width = img.size[0]
+                img_height = img.size[1]
+                ratio = float(screen_width) / float(img_width)
+                delta = int(img_height * ratio) - screen_height
+                print("    resizing image")
+                img = img.resize(
+                    (int(img_width * ratio), int(img_height * ratio)))
+                uncropped_images[img_fname] = img
             print("    cropping image")
+            shift = int(delta * float(percent) / float(100))
             img = img.crop((0, shift, screen_width, screen_height+shift))
             imagetk = ImageTk.PhotoImage(img)
             images[section] = (part_name, imagetk)
