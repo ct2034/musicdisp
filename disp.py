@@ -17,7 +17,8 @@ FONT_WINDOW = 18
 FONT_FULLSCREEN = 30
 
 
-def midi_callback(msg, _):
+def midi_callback(msg, a):
+    print(a)
     # info from message
     print(f"msg: {msg}")
     oct_nr = oct(msg[0][1])[2:]
@@ -71,7 +72,7 @@ if __name__ == "__main__":
     # midi setup
     midin = rtmidi.MidiIn()
     midin.open_virtual_port("musicdisp")
-    midin.set_callback(midi_callback)
+    midin.set_callback(midi_callback, "a")
 
     # gui setup
     root = Tk()
