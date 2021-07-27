@@ -85,17 +85,18 @@ if __name__ == "__main__":
     # screen_width, screen_height = 1366, 768  # laptop
 
     # prepare gui elements
+    # for images
     img_frame = Frame(root, relief="flat", borderwidth=0, bg="#FFFFFF")
     img_frame.pack(fill=BOTH, expand=YES)
     img_frame.pack_propagate(False)
-
     img_label = Label(img_frame, bg="#FFFFFF")
     img_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+    # for info
     center_frame = Frame(img_frame, relief='flat', borderwidth=0)
     center_frame.place(relx=0.5, rely=0.5, anchor=CENTER)
-
-    info_label = Label(center_frame, text='loading', borderwidth=2, fg="#FFFFFF",
-                       relief="flat", bg="#111111")
+    info_label = Label(center_frame, text='loading', borderwidth=2,
+                       fg="#FFFFFF", relief="flat", bg="#111111")
     info_label.pack()
     root.update()
 
