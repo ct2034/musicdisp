@@ -1,0 +1,11 @@
+[
+    {
+        "in": "mscz/touch.mscz",
+        "out": [
+            [
+                "parts/touch_",
+                ".png"
+            ]
+        ]
+    }
+]
