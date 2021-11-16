@@ -65,7 +65,7 @@ CleanRiffOneOne =  \relative e' {
     \stemUp dis8 r8 r2. | % 24
     R1 | % 25
     }
-MetalRiffOneOne =  \relative e {  % TODO: why no repeat?
+MetalRiffOneOne =  \relative e {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
     \set Score.currentBarNumber = #25

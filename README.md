@@ -16,10 +16,11 @@ Personal display for music score by midi pc messages
   * [ ] Frontmann Eier
 
 * convert songs
-  * [ ] Batalla en el cielo
+  * [x] Batalla en el cielo
   * [ ] Agnus Deutschland
 
 * check songs
   * [x] Touch
   * [x] Kleine Gedanken
-  * [ ] Pelirrojo
+  * [x] Pelirrojo
+  * [ ] Batalla en el cielo
