@@ -115,5 +115,47 @@
             "parts/Pelirrojo_SPLIT-8LeadRiffEnd.png",
             0
         ]
+    },
+    "Batalla en el cielo": {
+        "40": [
+            "Riff1 (1)",
+            "parts/Batalla_en_el_cielo_SPLIT-1RiffOneOne.png",
+            0
+        ],
+        "41": [
+            "Riff2 (1)",
+            "parts/Batalla_en_el_cielo_SPLIT-2RiffTwoOne.png",
+            0
+        ],
+        "42": [
+            "Riff1 (2)",
+            "parts/Batalla_en_el_cielo_SPLIT-3RiffOneTwo.png",
+            0
+        ],
+        "43": [
+            "Hook (1)",
+            "parts/Batalla_en_el_cielo_SPLIT-4HookOne.png",
+            0
+        ],
+        "44": [
+            "Shift",
+            "parts/Batalla_en_el_cielo_SPLIT-5Shift.png",
+            0
+        ],
+        "45": [
+            "Riff1 (3)",
+            "parts/Batalla_en_el_cielo_SPLIT-6RiffOneThree.png",
+            0
+        ],
+        "46": [
+            "Interluge",
+            "parts/Batalla_en_el_cielo_SPLIT-7Interluge.png",
+            0
+        ],
+        "47": [
+            "Hook (2) and Outro",
+            "parts/Batalla_en_el_cielo_SPLIT-8HookTwoAndOutro.png",
+            0
+        ]
     }
 }
