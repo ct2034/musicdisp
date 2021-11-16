@@ -48,10 +48,6 @@ CleanRiffOneOne =  \relative e' {
     r8 | % 17
     a1 ~ | % 18
     \stemUp a2 \stemUp fis2 
-    }
-CleanRiffOneTwo =  \relative e' {  % TODO: why no repeat?
-    \transposition es \clef "treble" \key c \major
-    \numericTimeSignature\time 4/4 |
     \repeat volta 2 {
         | % 19
         \mark \markup { \box { CleanRiff 1.2 } } | % 19
@@ -63,10 +59,17 @@ CleanRiffOneTwo =  \relative e' {  % TODO: why no repeat?
     \alternative { {
             | % 22
             \stemUp dis8 r8 \stemUp fis8 [ \stemUp dis8 ] r8 \stemUp dis8
-            r8 \stemUp dis8 }
+            r8 \stemUp dis8 } {}
         } | % 23
     \stemUp dis8 r8 r2. | % 24
     R1 | % 25
+    }
+MetalRiffOneOne =  \relative e {  % TODO: why no repeat?
+    \transposition es \clef "treble" \key c \major
+    \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #25
+    % Permit first bar number to be printed
+    \bar ""
     \mark \markup { \box { MetalRiff 1.1 } } | % 25
     r4 \stemDown a'8 [ \stemDown f'8 ] r8 \stemDown e8 r4 | % 26
     r4 \stemDown a,8 [ \stemDown f'8 ] r8 \stemDown e8 r4 | % 27
@@ -90,24 +93,36 @@ CleanRiffOneTwo =  \relative e' {  % TODO: why no repeat?
     \stemUp f2 \stemUp b,2 | \barNumberCheck #40
     \stemUp c2 \stemUp e4 \stemUp gis8 r8 
     }
-CleanRiffOneThree = \relative e' {  % TODO: why no repeat?
+CleanRiffOneThree = \relative e' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 | 
+    \set Score.currentBarNumber = #41
+    % Permit first bar number to be printed
+    \bar ""
+    \mark \markup { \box { CleanRiff 1.3 } } | % 41
     \repeat volta 2 {
-        | % 41
-        \mark \markup { \box { CleanRiff 1.3 } } | % 41
+        \bar ".|:"
         \stemUp e8 r8 \stemDown b'8 r4 \stemUp e,8 [ \stemUp b'8 \stemUp
         e,8 ] | % 42
         \stemDown b'8 r8 \stemDown b8 r8 \stemUp a8 r4. | % 43
         \stemUp fis8 r8 \stemDown b8 r4 \stemUp fis8 [ \stemUp b8
-        \stemUp fis8 ] }
+        \stemUp fis8 ] | }
     \alternative { {
-            | % 44
             \stemUp dis8 r8 \stemUp fis8 [ \stemUp dis8 ] r8 \stemUp dis8
-            r8 \stemUp dis8 }
-        } | % 45
-    \stemUp dis8 r8 r2. \repeat volta 2 {
+            r8 \stemUp dis8 | % 44
+        } 
+        { } }
+        \stemUp dis8 r8 r2. | % 45
+}
+MetalRiffTwo =  \relative e' {
+    \transposition es \clef "treble" \key c \major
+    \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #46
+    % Permit first bar number to be printed
+    \bar ""
+    \repeat volta 2 {
         | % 46
+        \bar ".|:"
         \mark \markup { \box { MetalRiff 2 } } \tempo 4=180 | % 46
         r4 \stemDown f'4 \stemDown c4 \stemDown b8 [ \stemDown e8 ~ ] | % 47
         \stemDown e4 \stemDown b8 r8 \stemDown b8 r8 \stemDown e4 | % 48
@@ -134,6 +149,9 @@ CleanRiffOneThree = \relative e' {  % TODO: why no repeat?
 Bridge =  \relative e' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #62
+    % Permit first bar number to be printed
+    \bar ""
     \mark \markup { \box { Bridge } } | % 62
     \stemUp e8 r4. \stemUp e8 [ \stemUp a8 ] r4 | % 63
     \stemUp e8 r4 \stemDown b'8 \stemUp e,8 r8 \stemUp a4 | % 64
@@ -152,6 +170,13 @@ Bridge =  \relative e' {
     r4 \stemUp e8 r4. \stemUp e8 [ \stemUp a8 ] | % 76
     \stemUp c,4 \stemUp f2 \stemUp c4 | % 77
     \stemUp e2 \stemUp d2 | % 78
+} 
+MetalRiffOneTwo =  \relative e {
+    \transposition es \clef "treble" \key c \major
+    \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #78
+    % Permit first bar number to be printed
+    \bar ""
     \mark \markup { \box { Metalriff 1.2 } } | % 78
     r4 \stemDown a'8 [ \stemDown f'8 ] r8 \stemDown e8 r4 | % 79
     r4 \stemDown a,8 [ \stemDown f'8 ] r8 \stemDown e8 r4 |
@@ -178,6 +203,9 @@ Bridge =  \relative e' {
 CleanRiffOneFour =  \relative e' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #94
+    % Permit first bar number to be printed
+    \bar ""
     \mark \markup { \box { CleanRiff 1.4 } } | % 94
     \stemUp e8 r8 \stemDown b'8 r4 \stemUp e,8 [ \stemUp b'8 \stemUp e,8
     ] | % 95
@@ -211,6 +239,9 @@ CleanRiffOneFour =  \relative e' {
 Outro =  \relative e' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #111
+    % Permit first bar number to be printed
+    \bar ""
     \mark \markup { \box { Outro } } | % 111
     g1 | % 112
     \stemDown d'4 \stemDown b4 \stemUp e,2 | % 113
@@ -250,8 +281,8 @@ Outro =  \relative e' {
 }
 
 \book {
-  \bookOutputSuffix "2CleanRiffOneTwo"
-  \score { \CleanRiffOneTwo }
+  \bookOutputSuffix "2MetalRiffOneOne"
+  \score { \MetalRiffOneOne }
   \layout { }
 }
 
@@ -262,19 +293,31 @@ Outro =  \relative e' {
 }
 
 \book {
-  \bookOutputSuffix "4Bridge"
+  \bookOutputSuffix "4MetalRiffTwo"
+  \score { \MetalRiffTwo }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "5Bridge"
   \score { \Bridge }
   \layout { }
 }
 
 \book {
-  \bookOutputSuffix "5CleanRiffOneFour"
+  \bookOutputSuffix "6MetalRiffOneTwo"
+  \score { \MetalRiffOneTwo }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "7CleanRiffOneFour"
   \score { \CleanRiffOneFour }
   \layout { }
 }
 
 \book {
-  \bookOutputSuffix "6Outro"
+  \bookOutputSuffix "8Outro"
   \score { \Outro }
   \layout { }
 }

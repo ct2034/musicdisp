@@ -21,5 +21,5 @@ Personal display for music score by midi pc messages
 
 * check songs
   * [x] Touch
-  * [ ] Kleine Gedanken
+  * [x] Kleine Gedanken
   * [ ] Pelirrojo
