@@ -2,7 +2,7 @@
 
 import json
 from tkinter import BOTH, CENTER, NW, SW, YES, Frame, Label, Tk
-from typing import Dict, Tuple
+from typing import Dict, List, Tuple
 
 import rtmidi
 from PIL import Image, ImageTk
@@ -18,21 +18,25 @@ ZFILL = 2
 
 
 class CurrentPage(object):
-    def __init__(self, max_page: int):
-        self.current = -1
-        self.max_page = max_page
+    def __init__(self, pages: List[int]):
+        self.current = 0
+        self.pages = pages
 
     def set(self, nr: int):
-        if nr >= 0 and nr <= self.max_page:
+        if nr in self.pages:
             self.current = nr
         else:
             raise ValueError(f"{nr} is not a valid page number")
 
     def inc(self):
-        self.current = min(self.current + 1, self.max_page)
+        new = self.pages.index(self.current) + 1
+        new = new % len(self.pages)
+        self.current = self.pages[new]
 
     def dec(self):
-        self.current = max(self.current - 1, 0)
+        new = self.pages.index(self.current) - 1
+        new = new % len(self.pages)
+        self.current = self.pages[new]
 
     def __getitem__(self, _):
         return self.current
@@ -211,7 +215,7 @@ if __name__ == "__main__":
     print(images)
 
     # storing current page
-    current_page = CurrentPage(max_page=max(map(int, images.keys())))
+    current_page = CurrentPage(pages=list(map(int, images.keys())))
 
     # container with relevant elements
     gui_elements = (
@@ -230,3 +234,7 @@ if __name__ == "__main__":
     # placeholder info
     info_label.config(text="Done processing\nwaiting for midi ...")
     root.mainloop()
+
+    # switching around to show the first page
+    switch_page(gui_elements, 1)
+    switch_page(gui_elements, -1)
