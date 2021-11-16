@@ -73,5 +73,47 @@
             "parts/Kleine_Gedanken_SPLIT-8Outro.png",
             0
         ]
+    },
+    "Pelirrojo": {
+        "30": [
+            "Intro",
+            "parts/Pelirrojo_SPLIT-1Intro.png",
+            0
+        ],
+        "31": [
+            "LeadRiff (1)",
+            "parts/Pelirrojo_SPLIT-2LeadRiffOne.png",
+            0
+        ],
+        "32": [
+            "Strophe (1)",
+            "parts/Pelirrojo_SPLIT-3StropheOne.png",
+            0
+        ],
+        "33": [
+            "LeadRiff (2)",
+            "parts/Pelirrojo_SPLIT-4LeadRiffTwo.png",
+            0
+        ],
+        "34": [
+            "Strophe (2)",
+            "parts/Pelirrojo_SPLIT-5StropheTwo.png",
+            0
+        ],
+        "35": [
+            "Release",
+            "parts/Pelirrojo_SPLIT-6Release.png",
+            0
+        ],
+        "36": [
+            "Rise",
+            "parts/Pelirrojo_SPLIT-7Rise.png",
+            0
+        ],
+        "37": [
+            "LeadRiff (End)",
+            "parts/Pelirrojo_SPLIT-8LeadRiffEnd.png",
+            0
+        ]
     }
 }

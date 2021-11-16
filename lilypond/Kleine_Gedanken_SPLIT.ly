@@ -3,7 +3,8 @@
 \pointAndClickOff
 
 \header {
-    copyright = Der Fadenschein
+    copyright = "Der Fadenschein"
+    title = "Kleine Gedanken"
     }
 
 \paper {

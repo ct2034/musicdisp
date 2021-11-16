@@ -3,7 +3,8 @@
 \pointAndClickOff
 
 \header {
-    copyright = Der Fadenschein
+    copyright = "Der Fadenschein"
+    title = "Pelirrojo"
     }
 
 \paper {
@@ -42,9 +43,11 @@ Intro =  \relative a' {
     \stemUp a8 ^ "" r8 \stemDown a8 [ \stemDown c8 ] \stemDown a8 [
     \stemDown c8 \stemDown e8 ] r8 \bar "||"
 }
-LeadRiffOne =  \relative a' {  % TODO: why wrong octave?
+LeadRiffOne =  \relative a'' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #12 
+    \bar ""
     \mark \markup { \box { LeadRiffOne } } | % 12
     \times 2/3  {
         \stemUp a,8 r8 r8 }
@@ -125,6 +128,8 @@ LeadRiffOne =  \relative a' {  % TODO: why wrong octave?
 StropheOne =  \relative a' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #21 
+    \bar ""
     \mark \markup { \box { StropheOne } } \tempo 4=115 ^\markup{ \bold {} }
     | % 21
     \times 2/3  {
@@ -196,6 +201,8 @@ StropheOne =  \relative a' {
 LeadRiffTwo =  \relative a' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #30
+    \bar ""
     \tempo 4=130 \mark \markup { \box { LeadRiffTwo } } ^\markup{ \bold {}
         } | \barNumberCheck #30
     \times 2/3  {
@@ -270,6 +277,8 @@ LeadRiffTwo =  \relative a' {
 StropheTwo =  \relative a' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #38 
+    \bar ""
     \mark \markup { \box { StropheTwo } } \tempo 4=115 | % 38
     \times 2/3  {
         \stemUp a8 r8 r8 }
@@ -335,6 +344,8 @@ StropheTwo =  \relative a' {
 Release =  \relative a' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #46
+    \bar ""
     \mark \markup { \box { Release } } | % 46
     \stemUp f2. \once \omit TupletBracket
     \times 2/3  {
@@ -387,6 +398,8 @@ Release =  \relative a' {
 Rise =  \relative a' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #66
+    \bar ""
     \mark \markup { \box { Rise } } | % 66
     \stemUp a2 \stemUp e4 \stemUp f4 ~ | % 67
     \stemUp f4 \stemUp e4 \stemUp a4 r4 | % 68
@@ -416,6 +429,8 @@ Rise =  \relative a' {
 LeadRiffEnd =  \relative a' {
     \transposition es \clef "treble" \key c \major
     \numericTimeSignature\time 4/4 |
+    \set Score.currentBarNumber = #83
+    \bar ""
     \mark \markup { \box { LeadRiffEnd } } \tempo 4=130 ^\markup{ \bold {}
         } | % 83
     \times 2/3  {

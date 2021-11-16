@@ -3,9 +3,8 @@
 \pointAndClickOff
 
 \header {
-    encodingsoftware =  "MuseScore 3.6.2"
     copyright = "Der Fadenschein"
-    encodingdate =  "2021-09-28"
+    title = "Touch"
     }
 
 % #(set-global-staff-size 19.9974857143)
@@ -44,7 +43,7 @@ Riff =  \relative bes' {
     \stemUp f4 -. r4 \stemUp bes,4 -. r4 | % 9
     \stemUp f'4 -. r4 r2 | \barNumberCheck #10
     \mark \markup { \box { Riff 2.1
- } } | %\barNumberCheck #10
+ } } | \barNumberCheck #10
     \stemUp fis4 \stemUp b,4 -. \stemUp b4 -. \stemUp b4 -. | % 11
     \stemUp b4 -. \stemUp b4 -. \stemUp g'4 \stemUp f4 | % 12
     \stemUp fis4 \stemUp b,4 -. \stemUp b4 -. \stemUp b4 -. | % 13
@@ -54,7 +53,7 @@ Riff =  \relative bes' {
     \stemUp b4 -. \stemUp b4 -. \stemUp g'4 \stemUp f4 | % 17
     \stemUp fis4 \stemUp b,4 -. \stemUp b4 -. \stemUp b4 -. | % 18
     \stemUp b4 -. \stemUp b4 -. \stemUp g'4 \stemUp f4 | % 19
-    gis1 ~ | %\barNumberCheck #20
+    gis1 ~ | \barNumberCheck #20
     gis1 | % 21
 }
 Refrain =  \relative bes' {

@@ -44,7 +44,7 @@ class CurrentPage(object):
 
 def midi_callback(msg, gui_elements):
     (info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom, current_page) = gui_elements
+        center_frame_top, center_frame_bottom, current_page, midi_out) = gui_elements
 
     # info from message
     print(f"msg: {msg}")
@@ -115,13 +115,15 @@ def fullscreen(root, info_label, info_label_bottom):
 def switch_page(gui_elements, sign):
     print(f"switch_page, sign: {sign}")
     (info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom, current_page) = gui_elements
+        center_frame_top, center_frame_bottom, current_page, midi_out) = gui_elements
 
     assert sign in [1, -1], "sign must be 1 or -1"
     if sign == 1:
         current_page.inc()
     else:
         current_page.dec()
+
+    midi_out.send_message([0xC0, current_page[0]])
 
     current_page_padded = str(current_page[0]).zfill(ZFILL)
     next_page = current_page[0] + 1
@@ -192,7 +194,7 @@ if __name__ == "__main__":
                 info_song+"\n"+info_sec))
             root.update()
             percent = parts_json[song][section][IDX_PERCENT]
-            part_name = song + ": " + parts_json[song][section][IDX_SECTION]
+            part_name = section + ": " + parts_json[song][section][IDX_SECTION]
             img_fname = parts_json[song][section][IDX_FNAME]
             if img_fname in uncropped_images.keys():
                 img = uncropped_images[img_fname]
@@ -217,24 +219,27 @@ if __name__ == "__main__":
     # storing current page
     current_page = CurrentPage(pages=list(map(int, images.keys())))
 
+    # midi for sending
+    midi_out = rtmidi.MidiOut()
+    midi_out.open_virtual_port("musicdisp_out")
+
     # container with relevant elements
     gui_elements = (
         info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom, current_page)
+        center_frame_top, center_frame_bottom, current_page, midi_out)
 
     # manual controls
     root.bind("<Prior>", lambda a: switch_page(gui_elements, -1))
     root.bind("<Next>", lambda a: switch_page(gui_elements, 1))
 
-    # midi setup
-    midin = rtmidi.MidiIn()
-    midin.open_virtual_port("musicdisp")
-    midin.set_callback(midi_callback, gui_elements)
-
-    # placeholder info
-    info_label.config(text="Done processing\nwaiting for midi ...")
-    root.mainloop()
-
     # switching around to show the first page
     switch_page(gui_elements, 1)
     switch_page(gui_elements, -1)
+
+    # midi setup
+    midin = rtmidi.MidiIn()
+    midin.open_virtual_port("musicdisp_in")
+    midin.set_callback(midi_callback, gui_elements)
+
+    # main loop
+    root.mainloop()
