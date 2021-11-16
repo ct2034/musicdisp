@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 
 import json
-import logging
-import tkinter
-from time import sleep
-from tkinter import (BOTH, CENTER, DISABLED, NW, SW, YES, Button, Frame, Label,
-                     Tk)
+from tkinter import BOTH, CENTER, NW, SW, YES, Frame, Label, Tk
+from typing import Dict, Tuple
 
 import rtmidi
 from PIL import Image, ImageTk
@@ -17,23 +14,57 @@ IDX_PERCENT = 2
 FONT_WINDOW = 18
 FONT_FULLSCREEN = 30
 
+ZFILL = 2
+
+
+class CurrentPage(object):
+    def __init__(self, max_page: int):
+        self.current = -1
+        self.max_page = max_page
+
+    def set(self, nr: int):
+        if nr >= 0 and nr <= self.max_page:
+            self.current = nr
+        else:
+            raise ValueError(f"{nr} is not a valid page number")
+
+    def inc(self):
+        self.current = min(self.current + 1, self.max_page)
+
+    def dec(self):
+        self.current = max(self.current - 1, 0)
+
+    def __getitem__(self, _):
+        return self.current
+
 
 def midi_callback(msg, gui_elements):
+    (info_label, info_label_bottom, img_label, images, root,
+        center_frame_top, center_frame_bottom, current_page) = gui_elements
+
     # info from message
     print(f"msg: {msg}")
-    oct_nr = oct(msg[0][1])[2:]
-    oct_nr_padded = oct_nr.zfill(2)
-    next_oct_nr = oct(msg[0][1]+1)[2:]
-    next_oct_nr_padded = next_oct_nr.zfill(2)
+    try:
+        current_page.set(oct(msg[0][1])[2:])
+    except ValueError as e:
+        print(f"Exception: {e}")
+    current_page_padded = str(current_page[0]).zfill(ZFILL)
+    next_page = current_page[0] + 1
+    next_page_padded = str(next_page).zfill(ZFILL)
 
+    update_gui(info_label, info_label_bottom, img_label, images, root,
+               center_frame_top, center_frame_bottom,
+               current_page_padded, next_page_padded)
+
+
+def update_gui(info_label, info_label_bottom, img_label, images, root,
+               center_frame_top, center_frame_bottom,
+               current_page_padded, next_page_padded):
     # updating gui
-    (
-        info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom) = gui_elements
-    part_name, part_img = images[oct_nr_padded]
+    part_name, part_img = images[current_page_padded]
     info_label.config(text=part_name)
-    if next_oct_nr_padded in images.keys():
-        next_part_name, _ = images[next_oct_nr_padded]
+    if next_page_padded in images.keys():
+        next_part_name, _ = images[next_page_padded]
         center_frame_bottom.place(
             relx=0, rely=1, anchor=SW)
         info_label_bottom.config(text=next_part_name)
@@ -43,7 +74,7 @@ def midi_callback(msg, gui_elements):
     center_frame_top.place(relx=0, rely=0, anchor=NW)
     info_label.config(text=part_name)
     info_label.pack()
-    assert oct_nr_padded in images
+    assert current_page_padded in images
     try:
         img_label.config(image=part_img)
     except Exception as e:
@@ -77,6 +108,25 @@ def fullscreen(root, info_label, info_label_bottom):
     root.update()
 
 
+def switch_page(gui_elements, sign):
+    print(f"switch_page, sign: {sign}")
+    (info_label, info_label_bottom, img_label, images, root,
+        center_frame_top, center_frame_bottom, current_page) = gui_elements
+
+    assert sign in [1, -1], "sign must be 1 or -1"
+    if sign == 1:
+        current_page.inc()
+    else:
+        current_page.dec()
+
+    current_page_padded = str(current_page[0]).zfill(ZFILL)
+    next_page = current_page[0] + 1
+    next_page_padded = str(next_page).zfill(ZFILL)
+    update_gui(info_label, info_label_bottom, img_label, images, root,
+               center_frame_top, center_frame_bottom,
+               current_page_padded, next_page_padded)
+
+
 if __name__ == "__main__":
     print("main")
     info_label = None
@@ -106,13 +156,15 @@ if __name__ == "__main__":
     # for info
     center_frame_top = Frame(img_frame, relief='flat', borderwidth=0)
     center_frame_top.place(relx=0.5, rely=0.5, anchor=CENTER)
-    info_label = Label(center_frame_top, text='loading', borderwidth=2,
-                       fg="#FF2222", relief="flat", bg="#333333")
+    info_label = Label(
+        center_frame_top, text='loading', borderwidth=2,
+        fg="#FF2222", relief="flat", bg="#333333")
     info_label.pack()
     center_frame_bottom = Frame(img_frame, relief='flat', borderwidth=0)
     # center_frame_bottom.place(relx=0.5, rely=0.5, anchor=CENTER)
-    info_label_bottom = Label(center_frame_bottom, text='loading', borderwidth=2,
-                              fg="#22FF22", relief="flat", bg="#333333")
+    info_label_bottom = Label(
+        center_frame_bottom, text='loading', borderwidth=2,
+        fg="#22FF22", relief="flat", bg="#333333")
     info_label_bottom.pack()
     root.update()
 
@@ -123,8 +175,8 @@ if __name__ == "__main__":
     # load images
     assert parts_json is not None
     print(parts_json)
-    uncropped_images = {}
-    images = {}
+    uncropped_images: Dict[str, Image.Image] = {}
+    images: Dict[str, Tuple[str, Image.Image]] = {}
     root.update()
     for song in parts_json:
         info_song = f"Processing {song}"
@@ -136,7 +188,7 @@ if __name__ == "__main__":
                 info_song+"\n"+info_sec))
             root.update()
             percent = parts_json[song][section][IDX_PERCENT]
-            part_name = parts_json[song][section][IDX_SECTION]
+            part_name = song + ": " + parts_json[song][section][IDX_SECTION]
             img_fname = parts_json[song][section][IDX_FNAME]
             if img_fname in uncropped_images.keys():
                 img = uncropped_images[img_fname]
@@ -158,12 +210,22 @@ if __name__ == "__main__":
             images[section] = (part_name, imagetk)
     print(images)
 
+    # storing current page
+    current_page = CurrentPage(max_page=max(map(int, images.keys())))
+
+    # container with relevant elements
+    gui_elements = (
+        info_label, info_label_bottom, img_label, images, root,
+        center_frame_top, center_frame_bottom, current_page)
+
+    # manual controls
+    root.bind("<Prior>", lambda a: switch_page(gui_elements, -1))
+    root.bind("<Next>", lambda a: switch_page(gui_elements, 1))
+
     # midi setup
     midin = rtmidi.MidiIn()
     midin.open_virtual_port("musicdisp")
-    midin.set_callback(midi_callback, (
-        info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom))
+    midin.set_callback(midi_callback, gui_elements)
 
     # placeholder info
     info_label.config(text="Done processing\nwaiting for midi ...")

@@ -2,44 +2,33 @@
     "Touch": {
         "00": [
             "Riff 1.1",
-            "parts/touch_sx-1.png",
-            15
+            "parts/Touch-sx_SPLIT-0Riff.png",
+            0
         ],
         "01": [
-            "23",
-            "parts/touch_sx-1.png",
-            65
+            "Refrain 1.1",
+            "parts/Touch-sx_SPLIT-1Refrain.png",
+            0
         ],
         "02": [
-            "Solo",
-            "parts/touch_sx-1.png",
-            95
+            "Bridge",
+            "parts/Touch-sx_SPLIT-2Bridge.png",
+            0
         ],
         "03": [
-            "Riff 2.2",
-            "parts/touch_sx-1.png",
-            100
+            "Solo",
+            "parts/Touch-sx_SPLIT-3Solo.png",
+            0
         ],
         "04": [
-            "Riff 2.2 (p2)",
-            "parts/touch_sx-2.png",
+            "Refrain Sax",
+            "parts/Touch-sx_SPLIT-4Refrain_Sax.png",
             0
         ],
         "05": [
-            "Refrain Sax",
-            "parts/touch_sx-2.png",
-            10
-        ],
-        "06": [
-            "Refrain 2",
-            "parts/touch_sx-2.png",
-            42
-        ],
-        "07": [
-            "Interlude / Finis Corat Opus",
-            "parts/touch_sx-2.png",
-            91
+            "Interlude",
+            "parts/Touch-sx_SPLIT-5Interlude.png",
+            0
         ]
-    },
-    "": {}
+    }
 }
