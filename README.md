@@ -20,7 +20,7 @@ Personal display for music score by midi pc messages
   * [ ] Agnus Deutschland
 
 * check songs
-  * [x] Touch
-  * [x] Kleine Gedanken
-  * [x] Pelirrojo
+  * [ ] Touch
+  * [ ] Kleine Gedanken
+  * [ ] Pelirrojo
   * [ ] Batalla en el cielo
