@@ -86,27 +86,38 @@ HookOne =  \relative b' {
     \key g \major | % 42
     }
 Shift =  \relative b {
-    \transposition es \clef "treble" \key d \major
+    \override Staff.KeySignature #'color = #red
+    \transposition es \clef "treble" \key g \major
     \numericTimeSignature\time 4/4 |
     \mark \markup { \box { Shift } } | % 42
-    \stemUp e4 \stemUp g8 [ \stemUp fis8 ] \stemUp e4 \stemDown b'8 [
-    \stemDown c8 ] | % 43
-    \stemDown b4 \stemUp g8 [ \stemUp fis8 ] \stemUp e4 \stemUp c4 | % 44
-    \stemUp g'4 \times 2/3 {
-        \stemUp e4 \stemUp e4 \stemUp e4 }
-    \stemUp b4 | % 45
-    \stemUp fis'2 \stemUp d2 | % 46
-    \stemUp e4 \stemUp g8 [ \stemUp fis8 ] \stemUp e4 \stemDown b'8 [
-    \stemDown c8 ] | % 47
-    \stemDown a'4 \stemDown g8 [ \stemDown fis8 ] \stemDown e4 \stemDown
+    e4 g8 [ fis8 ] e4 b'8 [
+    \override NoteHead #'color = #red  % c is red
+    c8 ] | % 43
+    \override NoteHead #'color = #black % c was red
+    b4 g8 [ fis8 ] e4 
+    \override NoteHead #'color = #red  % c is red
+    c4 | % 44
+    \override NoteHead #'color = #black % c was red
+    g'4 \times 2/3 {
+        e4 e4 e4 }
+    b4 | % 45
+    fis'2 d2 | % 46
+    e4 g8 [ fis8 ] e4 b'8 
+    \override NoteHead #'color = #red  % c is red
+    [ c8
+    c8 ] | % 47
+    \override NoteHead #'color = #black % c was red
+    a'4 g8 [ fis8 ] e4     
+    \override NoteHead #'color = #red  % c is red
     c4 | % 48
-    \stemUp g4 \times 2/3 {
-        \stemUp e4 \stemUp e4 \stemUp e4 }
-    \stemUp b4 | % 49
-    \stemUp fis'2 \stemUp d2 | \barNumberCheck #50
-    \key d \major | \barNumberCheck #50
+    \override NoteHead #'color = #black % c was red
+    g4 \times 2/3 {
+        e4 e4 e4 }
+    b4 | % 49
+    fis'2 d2 | \barNumberCheck #50
     }
 RiffOneThree =  \relative b {
+    \override Staff.KeySignature #'color = #blue
     \transposition es \clef "treble" \key d \major
     \numericTimeSignature\time 4/4 |
     \mark \markup { \box { Riff1 } } | \barNumberCheck #50
