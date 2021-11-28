@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="841mm"
+   height="1189mm"
+   viewBox="0 0 841 1189"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="Saxboard.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="637.36147"
+     inkscape:cy="1239.0193"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer4"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="1366"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Board"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,892)"
+     style="display:inline">
+    <rect
+       style="fill:#323232;fill-opacity:1;stroke:none;stroke-width:0.86500001;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect815"
+       width="400"
+       height="460"
+       x="50"
+       y="-213" />
+    <g
+       id="g965">
+      <rect
+         y="119.5"
+         x="82.360001"
+         height="127"
+         width="335.28"
+         id="rect817"
+         style="fill:#64005a;fill-opacity:1;stroke:#fefefe;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <text
+         id="text960"
+         y="185.63033"
+         x="232.81586"
+         style="font-style:normal;font-weight:normal;font-size:141.11109924px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-size:7.05555534px;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+           y="185.63033"
+           x="232.81586"
+           id="tspan958"
+           sodipodi:role="line">Switch Dr</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Components under low">
+    <g
+       style="display:inline"
+       id="g956"
+       transform="translate(-10.351848,892.5)">
+      <rect
+         y="-213"
+         x="266.09521"
+         height="126.135"
+         width="139.13499"
+         id="rect947"
+         style="fill:#000000;fill-opacity:1;stroke:#fefefe;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <text
+         id="text951"
+         y="-147.30217"
+         x="314.43576"
+         style="font-style:normal;font-weight:normal;font-size:141.11109924px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-size:7.05555534px;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+           y="-147.30217"
+           x="314.43576"
+           id="tspan949"
+           sodipodi:role="line">ART TubeMP</tspan></text>
+    </g>
+    <rect
+       style="display:inline;fill:#7f7f7f;fill-opacity:1;stroke:#010101;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect4728"
+       width="95"
+       height="145"
+       x="679.5"
+       y="-250.12169"
+       transform="rotate(90)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Components under high">
+    <g
+       style="display:inline"
+       id="g1023"
+       transform="translate(23.566805,916.45072)">
+      <g
+         style="stroke:#fefefe;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="translate(124.85731,-132.56568)"
+         id="g976">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:#fefefe;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect967"
+           width="114.3"
+           height="101.6"
+           x="119.73675"
+           y="-79.850037" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#fefefe;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           x="155.50304"
+           y="-26.419706"
+           id="text971"><tspan
+             sodipodi:role="line"
+             id="tspan969"
+             x="155.50304"
+             y="-24.586916"
+             style="fill:#ffffff;fill-opacity:1;stroke:#fefefe;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></text>
+      </g>
+      <text
+         id="text1015"
+         y="-158.98538"
+         x="280.36035"
+         style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:0;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+           y="-158.98538"
+           x="280.36035"
+           id="tspan1013"
+           sodipodi:role="line">Rolls PM55P</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Plate"
+     style="display:inline">
+    <g
+       id="g1005">
+      <circle
+         r="7.5"
+         cy="696.5"
+         cx="407.50003"
+         id="path978-2"
+         style="display:inline;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <circle
+         r="7.5"
+         cy="961.5"
+         cx="92.5"
+         id="path978-3"
+         style="display:inline;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <circle
+         r="7.5"
+         cy="961.5"
+         cx="407.5"
+         id="path978-6"
+         style="display:inline;fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <rect
+         y="679.5"
+         x="75.5"
+         height="299"
+         width="349"
+         id="rect829"
+         style="fill:none;fill-opacity:1;stroke:#7f7f7f;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <circle
+         r="7.5"
+         cy="696.5"
+         cx="92.500008"
+         id="path978"
+         style="fill:#7f7f7f;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+    </g>
+  </g>
+</svg>
