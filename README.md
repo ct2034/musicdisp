@@ -13,7 +13,7 @@ Personal display for music score by midi pc messages
 
 # todo
 * write songs
-  * [ ] Frontmann Eier
+  * [x] Frontmann Eier
 
 * convert songs
   * [x] Batalla en el cielo

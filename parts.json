@@ -31,7 +31,18 @@
             0
         ]
     },
-    "Frontmann Eier": {},
+    "Frontmann Eier": {
+        "10": [
+            "page 1",
+            "parts/Frontmann_Eier_SPLIT-part-page1.png",
+            0
+        ],
+        "11": [
+            "page 2",
+            "parts/Frontmann_Eier_SPLIT-part-page2.png",
+            0
+        ]
+    },
     "Kleine Gedanken": {
         "20": [
             "CleanRiff 1.1",
