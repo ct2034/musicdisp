@@ -17,7 +17,7 @@ Personal display for music score by midi pc messages
 
 * convert songs
   * [x] Batalla en el cielo
-  * [ ] Agnus Deutschland
+  * [x] Agnus Deutschland
 
 * check songs
   * [ ] Touch

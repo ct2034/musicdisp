@@ -168,5 +168,42 @@
             "parts/Batalla_en_el_cielo_SPLIT-8HookTwoAndOutro.png",
             0
         ]
+    },
+    "Agnus Deutschland": {
+        "50": [
+            "page 1",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page1.png",
+            0
+        ],
+        "51": [
+            "page 2",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page2.png",
+            0
+        ],
+        "52": [
+            "page 3",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page3.png",
+            0
+        ],
+        "53": [
+            "page 4",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page4.png",
+            0
+        ],
+        "54": [
+            "page 5",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page5.png",
+            0
+        ],
+        "55": [
+            "page 6",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page6.png",
+            0
+        ],
+        "56": [
+            "page 7",
+            "parts/Agnus_Deutschland-Piano_SPLIT-page7.png",
+            0
+        ]
     }
 }
