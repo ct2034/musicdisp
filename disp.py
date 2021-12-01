@@ -5,6 +5,7 @@ from tkinter import BOTH, CENTER, NW, SW, YES, Frame, Label, Tk
 from typing import Dict, List, Tuple
 
 import rtmidi
+import screeninfo
 from PIL import Image, ImageTk
 
 IDX_SECTION = 0
@@ -15,6 +16,8 @@ FONT_WINDOW = 18
 FONT_FULLSCREEN = 30
 
 ZFILL = 2
+
+SIZE_FROM_PRIMARY = True
 
 
 class CurrentPage(object):
@@ -44,7 +47,8 @@ class CurrentPage(object):
 
 def midi_callback(msg, gui_elements):
     (info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom, current_page, midi_out) = gui_elements
+        center_frame_top, center_frame_bottom, current_page,
+        midi_out) = gui_elements
 
     # info from message
     print(f"msg: {msg}")
@@ -102,8 +106,12 @@ def fullscreen(root, info_label, info_label_bottom):
     root.attributes("-zoomed", True)  # fullscreen
     root.attributes('-topmost', True)  # topmost window
     root.update()
-    width, height = root.winfo_screenwidth(), root.winfo_screenheight()
-    root.geometry("%dx%d+0+0" % (width, height))
+    for m in screeninfo.get_monitors():
+        if m.is_primary == SIZE_FROM_PRIMARY:
+            screen_width = m.width
+            screen_height = m.height
+            break
+    root.geometry("%dx%d+0+0" % (screen_width, screen_height))
     root.overrideredirect(1)  # Remove border
     if info_label is not None:
         info_label.config(font=("Helvetica", FONT_FULLSCREEN))
@@ -115,7 +123,8 @@ def fullscreen(root, info_label, info_label_bottom):
 def switch_page(gui_elements, sign):
     print(f"switch_page, sign: {sign}")
     (info_label, info_label_bottom, img_label, images, root,
-        center_frame_top, center_frame_bottom, current_page, midi_out) = gui_elements
+        center_frame_top, center_frame_bottom, current_page,
+        midi_out) = gui_elements
 
     assert sign in [1, -1], "sign must be 1 or -1"
     if sign == 1:
@@ -148,8 +157,12 @@ if __name__ == "__main__":
     root.bind("<F11>", lambda a: fullscreen(
         root, info_label, info_label_bottom))
     windowed(root, info_label, info_label_bottom)  # not fullscreen
-    screen_width, screen_height = 1920, 1080  # 1080p
-    # screen_width, screen_height = 1366, 768  # laptop
+    for m in screeninfo.get_monitors():
+        if m.is_primary == SIZE_FROM_PRIMARY:
+            screen_width = m.width
+            screen_height = m.height
+            break
+    print(f"screen_width: {screen_width}, screen_height: {screen_height}")
 
     # prepare gui elements
     # for images

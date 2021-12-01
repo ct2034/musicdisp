@@ -1,4 +1,5 @@
-py-midi
-# tkinter ?
 pillow
+py-midi
 python-rtmidi
+screeninfo
+tk
