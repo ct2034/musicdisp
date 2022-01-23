@@ -22,7 +22,8 @@
         }
     }
 PartPOneVoiceOne =  \relative as' {
-    \clef "treble" \key c \major \numericTimeSignature\time 4/4 \repeat
+    \clef "treble" \key c \major \numericTimeSignature\time 4/4 |
+    \repeat
     volta 2 {
         | % 1
         R1*8 }
