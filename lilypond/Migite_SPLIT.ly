@@ -1,3 +1,4 @@
+\version "2.20.0"
 \pointAndClickOff
 
 \header {
@@ -12,16 +13,21 @@
     bottom-margin = 0.5\cm
     left-margin = 0.5\cm
     right-margin = 0.5\cm
+    score-system-spacing =
+      #'((basic-distance . 16)
+        (minimum-distance . 10)
+        (padding . 5)
+        (stretchability . 80))
     }
 \layout {
     \context { \Score
-        skipBars = ##t
+        % skipBars = ##t
         autoBeaming = ##f
         }
     }
 
 trackAchannelA = {
-  \set Staff.instrumentName = "Migite"
+  \set Staff.instrumentName = ""
   \time 4/4 
   \tempo 4 = 130 
 }
@@ -38,12 +44,12 @@ trackBchannelA = {
 }
 
 trackBchannelB = \relative c {
-  \autoBreaksOff
   \clef bass
   \override Staff.Clef #'color = #red
   \voiceTwo
   r1*2 c2. r4 
-  | % 4
+  | \break
+  % 4
   c2. r4 
   | % 5
   c2. r4 
@@ -73,12 +79,12 @@ trackBchannelB = \relative c {
   f2. r4 
   | % 18
   c2. r4 
-  | \break
+  |
   % 19
   c1*4 gis'1*2 f1 
   | % 26
   c 
-  | \break 
+  | \break
   % 27
   \clef treble
   d''2 dis 
@@ -93,6 +99,7 @@ trackBchannelB = \relative c {
   | % 32
   <c, c' >2. r4 
   | % 33
+  \barNumberCheck #33
   d'2 dis 
   | % 34
   g1 
@@ -104,13 +111,13 @@ trackBchannelB = \relative c {
   d'2 dis 
   | % 38
   <c, c' >2. r4 
-  | \break 
+  | 
   % 39
   \clef bass
   c,1*4 gis'1*2 f1 
   | % 46
   c 
-  | \break 
+  | 
   % 47
   \clef treble
   r2*17 d''2 
@@ -118,7 +125,7 @@ trackBchannelB = \relative c {
   c,1*2 g c dis'1. d2 
   | % 64
   c,1*2 g c dis'1. d2 
-  | \break 
+  | 
   % 72
   \clef bass
   c,,1*4 gis'1*2 f1 
@@ -156,7 +163,7 @@ trackBchannelB = \relative c {
   f2. r4 
   | % 95
   c2. r4 
-  | \break 
+  | 
   % 96
   \clef treble
   d''2 dis 
@@ -182,7 +189,7 @@ trackBchannelB = \relative c {
   d'2 dis 
   | % 107
   <c, c' >2. r4 
-  | \break % 108
+  | % 108
   \clef bass
   c,1*4 gis'1*2 f1 
   | % 115
@@ -217,10 +224,12 @@ trackB = <<
 >>
 
 
+\book {
 \score {
   <<
     \context Staff=trackB \trackA
     \context Staff=trackB \trackB
   >>
   \layout {}
+}
 }
