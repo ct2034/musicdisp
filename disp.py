@@ -7,10 +7,15 @@ from typing import Dict, List, Tuple
 import rtmidi
 import screeninfo
 from PIL import Image, ImageTk
+from rtmidi.midiconstants import PROGRAM_CHANGE
 
 IDX_SECTION = 0
 IDX_FNAME = 1
 IDX_PERCENT = 2
+IDX_MIDI_PC_TUPLE = 2
+IDX_MIDI_PC_JSON = 3
+
+MIDI_CHANNEL = 0
 
 FONT_WINDOW = 18
 FONT_FULLSCREEN = 30
@@ -63,16 +68,17 @@ def midi_callback(msg, gui_elements):
     update_gui(info_label, info_label_bottom, img_label, images, root,
                center_frame_top, center_frame_bottom,
                current_page_padded, next_page_padded)
+    send_midi_pc(midi_out, images[current_page_padded][IDX_MIDI_PC_JSON])
 
 
 def update_gui(info_label, info_label_bottom, img_label, images, root,
                center_frame_top, center_frame_bottom,
                current_page_padded, next_page_padded):
     # updating gui
-    part_name, part_img = images[current_page_padded]
+    part_name, part_img, _ = images[current_page_padded]
     info_label.config(text=part_name)
     if next_page_padded in images.keys():
-        next_part_name, _ = images[next_page_padded]
+        next_part_name, _, _ = images[next_page_padded]
         center_frame_bottom.place(
             relx=0, rely=1, anchor=SW)
         info_label_bottom.config(text=next_part_name)
@@ -132,14 +138,22 @@ def switch_page(gui_elements, sign):
     else:
         current_page.dec()
 
-    midi_out.send_message([0xC0, current_page[0]])
-
     current_page_padded = str(current_page[0]).zfill(ZFILL)
     next_page = current_page[0] + 1
     next_page_padded = str(next_page).zfill(ZFILL)
     update_gui(info_label, info_label_bottom, img_label, images, root,
                center_frame_top, center_frame_bottom,
                current_page_padded, next_page_padded)
+    send_midi_pc(midi_out, images[current_page_padded][IDX_MIDI_PC_TUPLE])
+
+
+def send_midi_pc(midi_out, midi_pc):
+    if midi_out is not None:
+        print(f"send_midi_pc: {midi_pc}")
+        msg = [(PROGRAM_CHANGE & 0xF0) | (MIDI_CHANNEL & 0xF)]
+        msg.append(int(midi_pc, 0) & 0x7F)
+        midi_out.send_message(msg)
+        # midi_out.send_message([0x90, 60, 112])
 
 
 if __name__ == "__main__":
@@ -195,7 +209,7 @@ if __name__ == "__main__":
     assert parts_json is not None
     print(parts_json)
     uncropped_images: Dict[str, Image.Image] = {}
-    images: Dict[str, Tuple[str, Image.Image]] = {}
+    images: Dict[str, Tuple[str, Image.Image, str]] = {}
     root.update()
     for song in parts_json:
         info_song = f"Processing {song}"
@@ -209,6 +223,7 @@ if __name__ == "__main__":
             percent = parts_json[song][section][IDX_PERCENT]
             part_name = section + ": " + parts_json[song][section][IDX_SECTION]
             img_fname = parts_json[song][section][IDX_FNAME]
+            midi_pc = parts_json[song][section][IDX_MIDI_PC_JSON]
             if img_fname in uncropped_images.keys():
                 img = uncropped_images[img_fname]
             else:
@@ -226,7 +241,7 @@ if __name__ == "__main__":
             shift = int(delta * float(percent) / float(100))
             img = img.crop((0, shift, screen_width, screen_height+shift))
             imagetk = ImageTk.PhotoImage(img)
-            images[section] = (part_name, imagetk)
+            images[section] = (part_name, imagetk, midi_pc)
     print(images)
 
     # storing current page
@@ -234,7 +249,8 @@ if __name__ == "__main__":
 
     # midi for sending
     midi_out = rtmidi.MidiOut()
-    midi_out.open_virtual_port("musicdisp_out")
+    midi_out.set_client_name("musicdisp")
+    midi_out.open_virtual_port("musicdisp_send_pc")
 
     # container with relevant elements
     gui_elements = (

@@ -3,214 +3,254 @@
         "00": [
             "Riff 1.1",
             "parts/Touch-sx_SPLIT-0Riff.png",
-            0
+            0,
+            "0x00"
         ],
         "01": [
             "Refrain 1.1",
             "parts/Touch-sx_SPLIT-1Refrain.png",
-            0
+            0,
+            "0x01"
         ],
         "02": [
             "Bridge",
             "parts/Touch-sx_SPLIT-2Bridge.png",
-            0
+            0,
+            "0x02"
         ],
         "03": [
             "Solo",
             "parts/Touch-sx_SPLIT-3Solo.png",
-            0
+            0,
+            "0x00"
         ],
         "04": [
             "Refrain Sax",
             "parts/Touch-sx_SPLIT-4Refrain_Sax.png",
-            0
+            0,
+            "0x00"
         ],
         "05": [
             "Interlude",
             "parts/Touch-sx_SPLIT-5Interlude.png",
-            0
+            0,
+            "0x00"
         ]
     },
     "Frontmann Eier": {
         "10": [
             "page 1",
             "parts/Frontmann_Eier_SPLIT-part-page1.png",
-            0
+            0,
+            "0x00"
         ],
         "11": [
             "page 2",
             "parts/Frontmann_Eier_SPLIT-part-page2.png",
-            0
+            0,
+            "0x00"
         ]
     },
     "Kleine Gedanken": {
         "20": [
             "CleanRiff 1.1",
             "parts/Kleine_Gedanken_SPLIT-1CleanRiffOneOne.png",
-            0
+            0,
+            "0x00"
         ],
         "21": [
             "MetalRiff 1.1",
             "parts/Kleine_Gedanken_SPLIT-2MetalRiffOneOne.png",
-            0
+            0,
+            "0x00"
         ],
         "22": [
             "CleanRiff 1.3",
             "parts/Kleine_Gedanken_SPLIT-3CleanRiffOneThree.png",
-            0
+            0,
+            "0x00"
         ],
         "23": [
             "MetalRiff 2",
             "parts/Kleine_Gedanken_SPLIT-4MetalRiffTwo.png",
-            0
+            0,
+            "0x00"
         ],
         "24": [
             "Bridge",
             "parts/Kleine_Gedanken_SPLIT-5Bridge.png",
-            0
+            0,
+            "0x00"
         ],
         "25": [
             "MetalRiff 1.2",
             "parts/Kleine_Gedanken_SPLIT-6MetalRiffOneTwo.png",
-            0
+            0,
+            "0x00"
         ],
         "26": [
             "CleanRiff 1.4",
             "parts/Kleine_Gedanken_SPLIT-7CleanRiffOneFour.png",
-            0
+            0,
+            "0x00"
         ],
         "27": [
             "Outro",
             "parts/Kleine_Gedanken_SPLIT-8Outro.png",
-            0
+            0,
+            "0x00"
         ]
     },
     "Pelirrojo": {
         "30": [
             "Intro",
             "parts/Pelirrojo_SPLIT-1Intro.png",
-            0
+            0,
+            "0x00"
         ],
         "31": [
             "LeadRiff (1)",
             "parts/Pelirrojo_SPLIT-2LeadRiffOne.png",
-            0
+            0,
+            "0x00"
         ],
         "32": [
             "Strophe (1)",
             "parts/Pelirrojo_SPLIT-3StropheOne.png",
-            0
+            0,
+            "0x00"
         ],
         "33": [
             "LeadRiff (2)",
             "parts/Pelirrojo_SPLIT-4LeadRiffTwo.png",
-            0
+            0,
+            "0x00"
         ],
         "34": [
             "Strophe (2)",
             "parts/Pelirrojo_SPLIT-5StropheTwo.png",
-            0
+            0,
+            "0x00"
         ],
         "35": [
             "Release",
             "parts/Pelirrojo_SPLIT-6Release.png",
-            0
+            0,
+            "0x00"
         ],
         "36": [
             "Rise",
             "parts/Pelirrojo_SPLIT-7Rise.png",
-            0
+            0,
+            "0x00"
         ],
         "37": [
             "LeadRiff (End)",
             "parts/Pelirrojo_SPLIT-8LeadRiffEnd.png",
-            0
+            0,
+            "0x00"
         ]
     },
     "Batalla en el cielo": {
         "40": [
             "Riff1 (1)",
             "parts/Batalla_en_el_cielo_SPLIT-1RiffOneOne.png",
-            0
+            0,
+            "0x00"
         ],
         "41": [
             "Riff2 (1)",
             "parts/Batalla_en_el_cielo_SPLIT-2RiffTwoOne.png",
-            0
+            0,
+            "0x00"
         ],
         "42": [
             "Riff1 (2)",
             "parts/Batalla_en_el_cielo_SPLIT-3RiffOneTwo.png",
-            0
+            0,
+            "0x00"
         ],
         "43": [
             "Hook (1)",
             "parts/Batalla_en_el_cielo_SPLIT-4HookOne.png",
-            0
+            0,
+            "0x00"
         ],
         "44": [
             "Shift",
             "parts/Batalla_en_el_cielo_SPLIT-5Shift.png",
-            0
+            0,
+            "0x00"
         ],
         "45": [
             "Riff1 (3)",
             "parts/Batalla_en_el_cielo_SPLIT-6RiffOneThree.png",
-            0
+            0,
+            "0x00"
         ],
         "46": [
             "Interluge",
             "parts/Batalla_en_el_cielo_SPLIT-7Interluge.png",
-            0
+            0,
+            "0x00"
         ],
         "47": [
             "Hook (2) and Outro",
             "parts/Batalla_en_el_cielo_SPLIT-8HookTwoAndOutro.png",
-            0
+            0,
+            "0x00"
         ]
     },
     "Agnus Deutschland": {
         "50": [
             "page 1",
             "parts/Agnus_Deutschland-Piano_SPLIT-page1.png",
-            0
+            0,
+            "0x00"
         ],
         "51": [
             "page 2",
             "parts/Agnus_Deutschland-Piano_SPLIT-page2.png",
-            0
+            0,
+            "0x00"
         ],
         "52": [
             "page 3",
             "parts/Agnus_Deutschland-Piano_SPLIT-page3.png",
-            0
+            0,
+            "0x00"
         ],
         "53": [
             "page 4",
             "parts/Agnus_Deutschland-Piano_SPLIT-page4.png",
-            0
+            0,
+            "0x00"
         ],
         "54": [
             "page 5",
             "parts/Agnus_Deutschland-Piano_SPLIT-page5.png",
-            0
+            0,
+            "0x00"
         ],
         "55": [
             "page 6",
             "parts/Agnus_Deutschland-Piano_SPLIT-page6.png",
-            0
+            0,
+            "0x00"
         ],
         "56": [
             "page 7",
             "parts/Agnus_Deutschland-Piano_SPLIT-page7.png",
-            0
+            0,
+            "0x00"
         ]
     },
     "Migite": {
         "60": [
             "All",
             "parts/Migite_SPLIT.png",
-            0
+            0,
+            "0x00"
         ]
     }
 }
