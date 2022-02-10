@@ -49,6 +49,12 @@
             "parts/Frontmann_Eier_SPLIT-part-page2.png",
             0,
             "0x00"
+        ],
+        "12": [
+            "page 3",
+            "parts/Frontmann_Eier_SPLIT-part-page3.png",
+            0,
+            "0x00"
         ]
     },
     "Kleine Gedanken": {
@@ -106,13 +112,13 @@
             "Intro",
             "parts/Pelirrojo_SPLIT-1Intro.png",
             0,
-            "0x00"
+            "0x02"
         ],
         "31": [
             "LeadRiff (1)",
             "parts/Pelirrojo_SPLIT-2LeadRiffOne.png",
             0,
-            "0x00"
+            "0x01"
         ],
         "32": [
             "Strophe (1)",
@@ -124,7 +130,7 @@
             "LeadRiff (2)",
             "parts/Pelirrojo_SPLIT-4LeadRiffTwo.png",
             0,
-            "0x00"
+            "0x01"
         ],
         "34": [
             "Strophe (2)",
@@ -148,7 +154,7 @@
             "LeadRiff (End)",
             "parts/Pelirrojo_SPLIT-8LeadRiffEnd.png",
             0,
-            "0x00"
+            "0x07"
         ]
     },
     "Batalla en el cielo": {

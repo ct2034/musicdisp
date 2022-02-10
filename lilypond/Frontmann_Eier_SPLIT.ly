@@ -14,11 +14,23 @@
     right-margin = 0.5\cm
     }
 
+\layout {
+    \context { \Score
+        % skipBars = ##t
+        autoBeaming = ##f
+        }
+    }
+
 part = \relative c' {
   \transposition es 
   \clef "treble" 
   \key c \major
-  r2*5 b'2 
+  \numericTimeSignature\time 4/4 |
+  r1 
+  |
+  r1 
+  |
+  r2 b'2 
   | % 4
   r2 f'4 d 
   | % 5
@@ -145,5 +157,4 @@ part = \relative c' {
 \book {
   \bookOutputSuffix "part"
   \score { \part }
-  \layout { }
 }
