@@ -24,6 +24,9 @@
 |         |      |      |                           |
 | 08      | 03   | 4    | MR: 01 NO EFFECT          |
 | 09      | 03   | 3    | MR: 02 2034               |
-| 10      | 03   | 2    | MR: 03 Phaser             |
-| 11      | 03   | 1    | MR: - TBD -               |
+| 0A      | 03   | 2    | MR: 03 Phaser             |
+| 0B      | 03   | 1    | MR: - TBD -               |
 |         |      |      |                           |
+
+Switching must work like this:
+Always send 0x00, 0x40, 0x08 and then what you want from each bank.
