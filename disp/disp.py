@@ -24,6 +24,8 @@ ZFILL = 2
 
 SIZE_FROM_PRIMARY = True
 
+DEFAULT_PCS = ["0x00", "0x04", "0x08"]
+
 
 class CurrentPage(object):
     def __init__(self, pages: List[int]):
@@ -68,7 +70,7 @@ def midi_callback(msg, gui_elements):
     update_gui(info_label, info_label_bottom, img_label, images, root,
                center_frame_top, center_frame_bottom,
                current_page_padded, next_page_padded)
-    send_midi_pc(midi_out, images[current_page_padded][IDX_MIDI_PC_JSON])
+    send_midi_pcs(midi_out, images[current_page_padded][IDX_MIDI_PC_JSON])
 
 
 def update_gui(info_label, info_label_bottom, img_label, images, root,
@@ -144,7 +146,12 @@ def switch_page(gui_elements, sign):
     update_gui(info_label, info_label_bottom, img_label, images, root,
                center_frame_top, center_frame_bottom,
                current_page_padded, next_page_padded)
-    send_midi_pc(midi_out, images[current_page_padded][IDX_MIDI_PC_TUPLE])
+    send_midi_pcs(midi_out, images[current_page_padded][IDX_MIDI_PC_TUPLE])
+
+
+def send_midi_pcs(midi_out, midi_pc_list):
+    for pc in DEFAULT_PCS + midi_pc_list:
+        send_midi_pc(midi_out, pc)
 
 
 def send_midi_pc(midi_out, midi_pc):
