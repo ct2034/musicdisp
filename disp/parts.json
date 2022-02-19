@@ -282,8 +282,14 @@
     },
     "Migite": {
         "60": [
-            "All",
-            "parts/Migite_SPLIT.png",
+            "page 1",
+            "parts/Migite_SPLIT-page1.png",
+            0,
+            []
+        ],
+        "61": [
+            "page 2",
+            "parts/Migite_SPLIT-page2.png",
             0,
             []
         ]
