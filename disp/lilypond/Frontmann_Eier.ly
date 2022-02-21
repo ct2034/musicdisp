@@ -1,160 +1,167 @@
-% Lily was here -- automatically converted by /usr/bin/midi2ly from mid/Frontmann_Eier_wr.mid
-\version "2.14.0"
+\version "2.20.0"
+% automatically converted by musicxml2ly from musicxml/Frontmann_Eier.musicxml
+\pointAndClickOff
 
+\header {
+    encodingsoftware =  "MuseScore 3.6.2"
+    encodingdate =  "2022-02-20"
+    }
+
+#(set-global-staff-size 19.9974571429)
+\paper {
+    
+    paper-width = 21.0\cm
+    paper-height = 29.7\cm
+    top-margin = 1.5\cm
+    bottom-margin = 1.5\cm
+    left-margin = 1.5\cm
+    right-margin = 1.5\cm
+    indent = 1.61538461538\cm
+    short-indent = 0.807692307692\cm
+    }
 \layout {
-  \context {
-    \Voice
-    \remove "Note_heads_engraver"
-    \consists "Completion_heads_engraver"
-    \remove "Rest_engraver"
-    \consists "Completion_rest_engraver"
-  }
-}
-
-trackAchannelB = \relative c {
-  \voiceOne
-  r2*5 b'2 
-  | % 4
-  r2 f'4 d 
-  | % 5
-  r2 b 
-  | % 6
-  r2 f'4 d 
-  | % 7
-  g f r2 
-  | % 8
-  c4 a b g 
-  | % 9
-  a2 g'4 r4 
-  | % 10
-  g r4*35 c,4*19160/19200 r4*40/19200 a4*19160/19200 r4*40/19200 b4*19160/19200 
-  r4*40/19200 g4*19160/19200 r4*40/19200 
-  | % 20
-  a4*38360/19200 r4*40/19200 g'4*19160/19200 r4*40/19200 f4*19160/19200 
-  r4*38440/19200 a,4*38360/19200 r4*40/19200 
-  | % 22
-  c4*19160/19200 r4*19240/19200 d4*19160/19200 r4*40/19200 e4 
-  | % 23
-  d e f g, 
-  | % 24
-  a2 r2*17 f4 r4*480/19200 a4*19160/19200 r4*18760/19200 c4*19160/19200 
-  r4*520/19200 a4*38360/19200 r4*40/19200 g'4*19160/19200 r4*40/19200 f4*19160/19200 
-  r4*114760/19200 f4*19160/19200 r4*40/19200 g4*19160/19200 r4*115240/19200 f4*19160/19200 
-  r4*40/19200 g4*19160/19200 r4*115240/19200 f4*19160/19200 r4*40/19200 g4*19160/19200 
-  r4*115240/19200 g4*19160/19200 r4*40/19200 f4*19160/19200 r4*1382440/19200 f,4 
-  a g b 
-  | % 62
-  r1 
-  | % 63
-  f4 a b b 
-  | % 64
-  r1 
-  | % 65
-  f4 a b g 
-  | % 66
-  r1 
-  | % 67
-  f4 f f a 
-  | % 68
-  a b g g 
-  | % 69
-  r1. g4 g 
-  | % 71
-  r1. g4 g 
-  | % 73
-  r1. g4 g 
-  | % 75
-  r1*2 c4*19160/19200 r4*40/19200 a4*19160/19200 r4*40/19200 b4*19160/19200 
-  r4*40/19200 g4*19160/19200 r4*40/19200 
-  | % 78
-  a4*38360/19200 r4*40/19200 g'4*19160/19200 r4*40/19200 f4*19160/19200 
-  r4*115240/19200 g,4 r4*7 g4 r4*7 g4 r4*7 g4 r4*7 g4 r4*7 g4 r4*7 g4 
-  r4*7 g4 g 
-  | % 95
-  r1 
-  | % 96
-  a4 r4 b r4 
-  | % 97
-  f r4 g r4 
-  | % 98
-  a r4 b r4 
-  | % 99
-  f1 
-  | % 100
-  e 
-  | % 101
-  c1. r2*5 d4*38360/19200 r4*40/19200 e4*38360/19200 r4*40/19200 
-  | % 106
-  f4*38360/19200 r4*40/19200 d4*38360/19200 r4*40/19200 
-  | % 107
-  e4*76760/19200 r4*76840/19200 e4*38360/19200 r4*40/19200 f4*38360/19200 
-  r4*40/19200 
-  | % 110
-  c'4*38360/19200 r4*40/19200 b4*38360/19200 r4*40/19200 
-  | % 111
-  a4*76760/19200 r4*76840/19200 b4*38360/19200 r4*40/19200 c4*38360/19200 
-  r4*40/19200 
-  | % 114
-  e4*38360/19200 r4*40/19200 f4*38360/19200 r4*40/19200 
-  | % 115
-  g4*76760/19200 r4*384040/19200 f,4*38360/19200 r4*40/19200 e4*38360/19200 
-  r4*40/19200 
-  | % 122
-  d4*19160/19200 r4*40/19200 e4*19160/19200 r4*40/19200 g4*38360/19200 
-  r4*40/19200 
-  | % 123
-  a4*76760/19200 r4*76840/19200 c4*19160/19200 r4*40/19200 b4*19160/19200 
-  r4*19240/19200 b4*19160/19200 r4*40/19200 
-  | % 126
-  c4*19160/19200 r4*19240/19200 b4*19160/19200 r4*19240/19200 
-  | % 127
-  a4*38360/19200 r4*115240/19200 b4*38360/19200 r4*40/19200 c4*38360/19200 
-  r4*40/19200 
-  | % 130
-  e4*38360/19200 r4*40/19200 f4*38360/19200 r4*40/19200 
-  | % 131
-  f4*76760/19200 r4*40/19200 
-  | % 132
-  g2 g4*9560/19200 r4*40/19200 g4*4760/19200 r4*139240/19200 f4 
-  d 
-  | % 135
-  r1 
-  | % 136
-  f4 d g f 
-  | % 137
-  r1 
-  | % 138
-  f4 d b b 
-  | % 139
-  r1*2 f4 g a b 
-  | % 142
-  c r4*5 a4 f 
-  | % 144
-  r1*4 c'4 b a g 
-  | % 149
-  f2 r2*5 a4 f r2*5 c'4 b a g 
-  | % 156
-  f2 
-}
-
-trackAchannelBvoiceB = \relative c {
-  \voiceTwo
-  r2*65 g'4*19160/19200 
-}
-
-trackA = <<
-
-  \clef bass
-  
-  \context Voice = voiceA \trackAchannelB
-  \context Voice = voiceB \trackAchannelBvoiceB
->>
+    \context { \Score
+        skipBars = ##t
+        autoBeaming = ##f
+        }
+    }
+PartPOneVoiceOne =  \relative b' {
+    \transposition es \clef "treble" \key c \major
+    \numericTimeSignature\time 4/4 | % 1
+    R1*2 | % 3
+    r2 \stemDown b2 | % 4
+    r2 \stemDown f'4 \stemDown d4 | % 5
+    r2 \stemDown b2 | % 6
+    r2 \stemDown f'4 \stemDown d4 | % 7
+    \stemDown g4 \stemDown f4 r2 | % 8
+    \stemDown c4 \stemUp a4 \stemDown b4 \stemUp g4 | % 9
+    \stemUp a2 \stemDown g'4 r4 | \barNumberCheck #10
+    \stemDown g4 r4 r2 | % 11
+    R1*8 | % 19
+    \stemDown c,4 \stemUp a4 \stemDown b4 \stemUp g4 | \barNumberCheck
+    #20
+    \stemUp a2 \stemDown g'4 \stemDown f4 | % 21
+    r2 \stemUp a,2 | % 22
+    \stemDown c4 r4 \stemDown d4 \stemDown e4 | % 23
+    \stemDown d4 \stemDown e4 \stemDown f4 \stemUp g,4 | % 24
+    \stemUp a2 r2 | % 25
+    R1*8 | % 33
+    \stemUp f4 \stemUp a4 \stemUp g4 \stemDown c4 | % 34
+    \stemUp a2 \stemDown g'4 \stemDown f4 | % 35
+    R1 | % 36
+    r2 \stemDown f4 \stemDown g4 | % 37
+    R1 | % 38
+    r2 \stemDown f4 \stemDown g4 | % 39
+    R1 | \barNumberCheck #40
+    r2 \stemDown f4 \stemDown g4 | % 41
+    R1 | % 42
+    r2 \stemDown g4 \stemDown f4 | % 43
+    R1*18 | % 61
+    \stemUp f,4 \stemUp a4 \stemUp g4 \stemDown b4 | % 62
+    R1 | % 63
+    \stemUp f4 \stemUp a4 \stemDown b4 \stemDown b4 | % 64
+    R1 | % 65
+    \stemUp f4 \stemUp a4 \stemDown b4 \stemUp g4 | % 66
+    R1 | % 67
+    \stemUp f4 \stemUp f4 \stemUp f4 \stemUp a4 | % 68
+    \stemUp a4 \stemDown b4 \stemUp g4 \stemUp g4 | % 69
+    R1 | \barNumberCheck #70
+    r2 \stemUp g4 \stemUp g4 | % 71
+    R1 | % 72
+    r2 \stemUp g4 \stemUp g4 | % 73
+    R1 | % 74
+    r2 \stemUp g4 \stemUp g4 | % 75
+    R1*2 | % 77
+    \stemDown c4 \stemUp a4 \stemDown b4 \stemUp g4 | % 78
+    \stemUp a2 \stemDown g'4 \stemDown f4 | % 79
+    R1 | \barNumberCheck #80
+    r2 \stemUp g,4 r4 | % 81
+    R1 | % 82
+    r2 \stemUp g4 r4 | % 83
+    R1 | % 84
+    r2 \stemUp g4 r4 | % 85
+    R1 | % 86
+    r2 \stemUp g4 r4 | % 87
+    R1 | % 88
+    r2 \stemUp g4 r4 | % 89
+    R1 | \barNumberCheck #90
+    r2 \stemUp g4 r4 | % 91
+    R1 | % 92
+    r2 \stemUp g4 r4 | % 93
+    R1 | % 94
+    r2 \stemUp g4 \stemUp g4 | % 95
+    R1 | % 96
+    \stemUp a4 r4 \stemDown b4 r4 | % 97
+    \stemUp f4 r4 \stemUp g4 r4 | % 98
+    \stemUp a4 r4 \stemDown b4 r4 | % 99
+    f1 | \barNumberCheck #100
+    e1 | % 101
+    c1 ~ | % 102
+    \stemUp c2 r2 | % 103
+    R1*2 | % 105
+    \stemUp d2 \stemUp e2 | % 106
+    \stemUp f2 \stemUp d2 | % 107
+    e1 | % 108
+    R1 | % 109
+    \stemUp e2 \stemUp f2 | \barNumberCheck #110
+    \stemDown c'2 \stemDown b2 | % 111
+    a1 | % 112
+    R1 | % 113
+    \stemDown b2 \stemDown c2 | % 114
+    \stemDown e2 \stemDown f2 | % 115
+    g1 | % 116
+    R1*5 | % 121
+    \stemUp f,2 \stemUp e2 | % 122
+    \stemUp d4 \stemUp e4 \stemUp g2 | % 123
+    a1 | % 124
+    R1 | % 125
+    \stemDown c4 \stemDown b4 r4 \stemDown b4 | % 126
+    \stemDown c4 r4 \stemDown b4 r4 | % 127
+    \stemUp a2 r2 | % 128
+    R1 | % 129
+    \stemDown b2 \stemDown c2 | \barNumberCheck #130
+    \stemDown e2 \stemDown f2 | % 131
+    f1 | % 132
+    \stemDown g2 \stemDown g8 [ \stemDown g8 -. ] r4 | % 133
+    R1 | % 134
+    r2 \stemDown f4 \stemDown d4 | % 135
+    R1 | % 136
+    \stemDown f4 \stemDown d4 \stemDown g4 \stemDown f4 | % 137
+    R1 | % 138
+    \stemDown f4 \stemDown d4 \stemDown b4 \stemDown b4 | % 139
+    R1*2 | % 141
+    \stemUp f4 \stemUp g4 \stemUp a4 \stemDown b4 | % 142
+    \stemDown c4 r4 r2 | % 143
+    r2 \stemUp a4 \stemUp f4 | % 144
+    R1*4 | % 148
+    \stemDown c'4 \stemDown b4 \stemUp a4 \stemUp g4 | % 149
+    \stemUp f2 r2 | \barNumberCheck #150
+    R1*2 | % 152
+    \stemUp a4 \stemUp f4 r2 | % 153
+    R1*2 | % 155
+    \stemDown c'4 \stemDown b4 \stemUp a4 \stemUp fisis4 | % 156
+    \stemUp eis2 r2 \bar "|."
+    }
 
 
+% The score definition
 \score {
-  <<
-    \context Staff=trackA \trackA
-  >>
-  \layout {}
-  \midi {}
-}
+    <<
+        
+        \new Staff
+        <<
+            \set Staff.instrumentName = "Alto Saxophone"
+            \set Staff.shortInstrumentName = "A. Sax."
+            
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+                >>
+            >>
+        
+        >>
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
+
