@@ -43,23 +43,47 @@
     },
     "Frontmann Eier": {
         "10": [
-            "page 1",
-            "parts/Frontmann_Eier_SPLIT-part-page1.png",
+            "Riff_one_a_one",
+            "parts/Frontmann_Eier_SPLIT-1Riff_one_a_one.png",
             0,
             []
         ],
         "11": [
-            "page 2",
-            "parts/Frontmann_Eier_SPLIT-part-page2.png",
+            "Bridge_one_a",
+            "parts/Frontmann_Eier_SPLIT-2Bridge_one_a.png",
+            0,
+            [
+                "0x02"
+            ]
+        ],
+        "12": [
+            "Bridge_one_b",
+            "parts/Frontmann_Eier_SPLIT-3Bridge_one_b.png",
+            0,
+            [
+                "0x01"
+            ]
+        ],
+        "13": [
+            "Riff_one_a_two",
+            "parts/Frontmann_Eier_SPLIT-4Riff_one_a_two.png",
             0,
             []
         ],
-        "12": [
-            "page 3",
-            "parts/Frontmann_Eier_SPLIT-part-page3.png",
+        "14": [
+            "Bridge_Solo",
+            "parts/Frontmann_Eier_SPLIT-5Bridge_Solo.png",
             0,
             [
                 "0x05"
+            ]
+        ],
+        "15": [
+            "Riff_one_a_three",
+            "parts/Frontmann_Eier_SPLIT-6Riff_one_a_three.png",
+            0,
+            [
+                "0x01"
             ]
         ]
     },

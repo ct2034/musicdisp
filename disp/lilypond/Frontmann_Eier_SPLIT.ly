@@ -1,10 +1,10 @@
-% Lily was here -- automatically converted by /usr/bin/midi2ly from mid/Frontmann_Eier.mid
-\version "2.14.0"
+\version "2.20.0"
+\pointAndClickOff
+
 \header {
     copyright = "Der Fadenschein"
     title = "Frontmann Eier"
     }
-
 \paper {
     paper-width = 21\cm
     paper-height = 11.8125\cm
@@ -13,15 +13,14 @@
     left-margin = 0.5\cm
     right-margin = 0.5\cm
     }
-
 \layout {
     \context { \Score
-        % skipBars = ##t
+        skipBars = ##t
         autoBeaming = ##f
         }
     }
 
-part = \relative c' {
+Riff_one_a_one = \relative c' {
   \transposition es 
   \clef "treble" 
   \key c \major
@@ -46,9 +45,17 @@ part = \relative c' {
   a2 g'4 r4 
   | % 10
   g r4 r2
-  | R1* 8 |
+  | R1* 8
+}
+
+Bridge_one_a =  \relative c' {
+  \transposition es \clef "treble" \key c \major
+  \numericTimeSignature\time 4/4 |
+  \set Score.currentBarNumber = #19
+  % Permit first bar number to be printed
+  \bar ""
   | % 19
-  c,4 a4 b4 g4
+  c'4 a4 b4 g4
   | % 20
   a2 g'4 f4
   | % 21
@@ -60,9 +67,17 @@ part = \relative c' {
   | % 24
   a2 r2 
   |
-  R1*8 
+  R1*8
+}
+
+Bridge_one_b =  \relative c' {
+  \transposition es \clef "treble" \key c \major
+  \numericTimeSignature\time 4/4 |
+  \set Score.currentBarNumber = #33
+  % Permit first bar number to be printed
+  \bar ""
   | % 33
-  f,4 a4 g4 c4 
+  f4 a4 g4 c4 
   |
   a2 g'4 f4 
   | % 35
@@ -83,8 +98,16 @@ part = \relative c' {
   r2 g4 f4 
   |
   R1*18 
+}
+
+Riff_one_a_two =  \relative c' {
+  \transposition es \clef "treble" \key c \major
+  \numericTimeSignature\time 4/4 |
+  \set Score.currentBarNumber = #61
+  % Permit first bar number to be printed
+  \bar ""
   | % 61
-  f,4 a4 g4 b4 
+  f4 a4 g4 b4 
   | % 62
   R1 
   | % 63
@@ -157,6 +180,14 @@ part = \relative c' {
   f r4 g r4 
   | % 98
   a r4 b r4 
+}
+
+Bridge_Solo =  \relative c' {
+  \transposition es \clef "treble" \key c \major
+  \numericTimeSignature\time 4/4 |
+  \set Score.currentBarNumber = #99
+  % Permit first bar number to be printed
+  \bar ""
   | % 99
   f1 
   | % 100
@@ -216,9 +247,17 @@ part = \relative c' {
   | % 132
   g2 g4 g8 g8 
   |
+}
+
+Riff_one_a_three =  \relative c' {
+  \transposition es \clef "treble" \key c \major
+  \numericTimeSignature\time 4/4 |
+  \set Score.currentBarNumber = #133
+  % Permit first bar number to be printed
+  \bar ""
   R1
   |
-  r2 f4 d4 
+  r2 f'4 d4 
   | % 135
   R1 
   | % 136
@@ -240,6 +279,38 @@ part = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "part"
-  \score { \part }
+  \bookOutputSuffix "1Riff_one_a_one"
+  \score { 
+    \Riff_one_a_one }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "2Bridge_one_a"
+  \score { \Bridge_one_a }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "3Bridge_one_b"
+  \score { \Bridge_one_b }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "4Riff_one_a_two"
+  \score { \Riff_one_a_two }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "5Bridge_Solo"
+  \score { \Bridge_Solo }
+  \layout { }
+}
+
+\book {
+  \bookOutputSuffix "6Riff_one_a_three"
+  \score { \Riff_one_a_three }
+  \layout { }
 }

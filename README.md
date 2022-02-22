@@ -20,17 +20,10 @@ Personal display for music score by midi pc messages
   * [x] Agnus Deutschland
 
 * check songs
-  * [ ] Touch
-  * [ ] Kleine Gedanken
-  * [ ] Pelirrojo
-  * [ ] Batalla en el cielo
+  * [x] Touch
+  * [x] Kleine Gedanken
+  * [x] Pelirrojo
+  * [x] Batalla en el cielo
 
 * define effects
-  * [ ] Frontmann
-    * [ ] Anfang: clean
-    * [ ] ab ca 19: 01
-    * [ ] dann clean
-    * [ ] ab ca 61: 02
-    * [ ] dann clean
-    * [ ] ab ca 99: Anti-Shimmer
-    * [ ] ab ca 131: 01 (dist)
+  * [x] Frontmann
