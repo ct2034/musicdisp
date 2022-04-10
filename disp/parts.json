@@ -1,45 +1,57 @@
 {
     "Agnus Deutschland": {
         "00": [
-            "page 1",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page1.png",
-            0,
+            "page 1-1",
+            "parts_static/agnus-1.png",
+            10,
             []
         ],
         "01": [
-            "page 2",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page2.png",
-            0,
+            "page 1-2",
+            "parts_static/agnus-1.png",
+            105,
             []
         ],
         "02": [
-            "page 3",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page3.png",
-            0,
+            "page 2-1",
+            "parts_static/agnus-2.png",
+            10,
             []
         ],
         "03": [
-            "page 4",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page4.png",
-            0,
+            "page 2-2",
+            "parts_static/agnus-2.png",
+            105,
             []
         ],
         "04": [
-            "page 5",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page5.png",
-            0,
+            "page 3-1",
+            "parts_static/agnus-3.png",
+            10,
             []
         ],
         "05": [
-            "page 6",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page6.png",
-            0,
+            "page 3-2",
+            "parts_static/agnus-3.png",
+            105,
             []
         ],
         "06": [
-            "page 7",
-            "parts/Agnus_Deutschland-Piano_SPLIT-page7.png",
-            0,
+            "page 4-1",
+            "parts_static/agnus-4.png",
+            10,
+            []
+        ],
+        "07": [
+            "page 4-2",
+            "parts_static/agnus-4.png",
+            105,
+            []
+        ],
+        "08": [
+            "page 5-1",
+            "parts_static/agnus-5.png",
+            10,
             []
         ]
     },
