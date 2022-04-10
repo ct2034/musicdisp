@@ -82,7 +82,9 @@
             "Solo",
             "parts/Touch-sx_SPLIT-3Solo.png",
             0,
-            []
+            [
+                "0x01"
+            ]
         ],
         "14": [
             "Refrain Sax",
@@ -102,7 +104,9 @@
             "Riff_one_a_one",
             "parts/Frontmann_Eier_SPLIT-1Riff_one_a_one.png",
             0,
-            []
+            [
+                "0x02"
+            ]
         ],
         "21": [
             "Bridge_one_a",
@@ -283,7 +287,7 @@
             "parts/Batalla_en_el_cielo_SPLIT-4HookOne.png",
             0,
             [
-                "0x10"
+                "0x05"
             ]
         ],
         "54": [
@@ -291,7 +295,7 @@
             "parts/Batalla_en_el_cielo_SPLIT-5Shift.png",
             0,
             [
-                "0x01"
+                "0x02"
             ]
         ],
         "55": [
@@ -311,7 +315,6 @@
             "parts/Batalla_en_el_cielo_SPLIT-8HookTwoAndOutro.png",
             0,
             [
-                "0x0A",
                 "0x05"
             ]
         ]
