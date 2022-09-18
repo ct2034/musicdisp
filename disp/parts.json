@@ -332,5 +332,25 @@
             0,
             []
         ]
+    },
+    "Imperator": {
+        "70": [
+            "page 1",
+            "parts/imperator_SPLIT-page1.png",
+            0,
+            []
+        ],
+        "71": [
+            "page 2",
+            "parts/imperator_SPLIT-page2.png",
+            0,
+            []
+        ],
+        "72": [
+            "page 3",
+            "parts/imperator_SPLIT-page3.png",
+            0,
+            []
+        ]
     }
 }
